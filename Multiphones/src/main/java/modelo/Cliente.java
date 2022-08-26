@@ -29,6 +29,8 @@ public class Cliente {
 		
 	}
 
+
+
 	public Cliente(int id_cliente, String nombre, String apellidos, String dni, String domicilio, String localidad,
 			String provincia, String cod_postal, Date fecha_nacimiento, String telefono_contacto, String email,
 			Date fecha_contratacion, Date permanencia, String telefono_tarifa, int id_tarifa_movil, int id_tarifa_fibra,
@@ -46,6 +48,7 @@ public class Cliente {
 		this.telefono_contacto = telefono_contacto;
 		this.email = email;
 		this.fecha_contratacion = fecha_contratacion;
+		
 		this.permanencia = permanencia;
 		this.telefono_tarifa = telefono_tarifa;
 		this.id_tarifa_movil = id_tarifa_movil;
@@ -53,6 +56,8 @@ public class Cliente {
 		this.id_tarifa_movilYfibra = id_tarifa_movilYfibra;
 		this.id_tarifa_fijo = id_tarifa_fijo;
 	}
+
+
 
 	public int getId_cliente() {
 		return id_cliente;

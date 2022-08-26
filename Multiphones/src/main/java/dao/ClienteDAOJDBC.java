@@ -46,18 +46,19 @@ public class ClienteDAOJDBC implements ClienteDAO {
 				String telefono_contacto = resultado.getString("telefono_contacto");
 				String email = resultado.getString("email");
 				Date fecha_contratacion = resultado.getDate("fecha_contratacion");
-				String permanencia = resultado.getString("permanencia");
+				Date permanencia = resultado.getDate("permanencia");
 				String telefono_tarifa = resultado.getString("telefono_tarifa");
 				int id_tarifa_movil = resultado.getInt("id_tarifa_movil");
 				int id_tarifa_fibra = resultado.getInt("id_tarifa_fibra");
 				int id_tarifa_movilYfibra = resultado.getInt("id_tarifa_movilYfibra");
 				int id_tarifa_fijo = resultado.getInt("id_tarifa_fijo");
 				
-				Cliente c = new Cliente(id_cliente, nombre, apellidos, dni, domicilio,
-						localidad, provincia, cod_postal, fecha_nacimiento, telefono_contacto,
-						email, fecha_contratacion, fecha_contratacion, telefono_tarifa,
-						id_tarifa_movil, id_tarifa_fibra, id_tarifa_movilYfibra, id_tarifa_fijo);
-
+				Cliente c = new Cliente(id_cliente, nombre, apellidos, dni, domicilio, localidad, provincia, cod_postal,
+										fecha_nacimiento, telefono_contacto, email, fecha_contratacion, permanencia,
+										telefono_tarifa, id_tarifa_movil, id_tarifa_fibra, id_tarifa_movilYfibra,
+										id_tarifa_fijo);
+				
+			
 				listaClientes.add(c);
 			}
 			System.out.println("Añadiendo Clientes: ");
@@ -220,9 +221,70 @@ public class ClienteDAOJDBC implements ClienteDAO {
 	}
 
 	@Override
-	public int actualizarCliente(Cliente cliente) {
-		// TODO Esbozo de método generado automáticamente
-		return 0;
+	public int actualizarCliente(Cliente c) {
+	
+		Connection con = conexion.getConexion();
+		int resultado=0;
+		
+		try {
+			consultaPreparada = con.prepareStatement("UPDATE clientes \r\n"
+					+ "SET nombre=?,\r\n"
+					+ "    apellidos=? \r\n"
+					+ "    dni=?, \r\n"
+					+ "    domicilio=?, \r\n"
+					+ "    localidad=? \r\n"
+					+ "    provincia=?, \r\n"
+					+ "    cod_postal=?, \r\n"
+					+ "    fecha_nacimiento=? \r\n"
+					+ "    telefono_contacto=?, \r\n"
+					+ "    email=?, \r\n"
+					+ "    fecha_contratacion=? \r\n"
+					+ "    permanencia=?, \r\n"
+					+ "    telefono_tarifa=?, \r\n"
+					+ "    id_tarifa_movil=?, \r\n"
+					+ "    id_tarifa_fibra=?, \r\n"
+					+ "    id_tarifa_movilYfibra=?, \r\n"
+					+ "    id_tarifa_fijo=?, \r\n"
+					+ "WHERE id_cliente=?");
+			
+			consultaPreparada.setString(1, c.getNombre());
+			consultaPreparada.setString(2, c.getApellidos());
+			consultaPreparada.setString(3, c.getDni());
+			consultaPreparada.setString(4, c.getDomicilio());
+			consultaPreparada.setString(5, c.getLocalidad());
+			consultaPreparada.setString(6, c.getProvincia());
+			consultaPreparada.setString(7, c.getCod_postal());
+			consultaPreparada.setDate(8, c.getFecha_nacimiento());
+			consultaPreparada.setString(9, c.getTelefono_contacto());
+			consultaPreparada.setString(10, c.getEmail());
+			consultaPreparada.setDate(11, c.getFecha_contratacion());
+			consultaPreparada.setDate(12, c.getPermanencia());
+			consultaPreparada.setString(13, c.getTelefono_tarifa());
+			consultaPreparada.setInt(14, c.getId_tarifa_movil());
+			consultaPreparada.setInt(15, c.getId_tarifa_fibra());
+			consultaPreparada.setInt(16, c.getId_tarifa_movilYfibra());
+			consultaPreparada.setInt(17, c.getId_tarifa_fijo());
+			consultaPreparada.setInt(18, c.getId_cliente());
+			
+			resultado=consultaPreparada.executeUpdate();
+			
+			System.out.println("Cliente actualizado: ");
+			System.out.println(c);
+
+		} catch (SQLException e) {
+			System.out.println("Error al realizar la actualizacion del cliente: "+consultaPreparada
+					+e.getMessage());
+		} finally {
+			try {
+				consulta.close();
+				conexion.desconectar();
+			} catch (SQLException e) {
+				System.out.println("Error al liberar recursos: "+e.getMessage());
+			} catch (Exception e) {
+				
+			}
+		}
+		return resultado;
 	}
 
 }
