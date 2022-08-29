@@ -8,8 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import modelo.Tarifa_fibra;
-import modelo.Tarifa_movil;
 import modelo.Tarifa_movilYfibra;
 import utilidades.ConexionBD;
 

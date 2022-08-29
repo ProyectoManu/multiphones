@@ -4,16 +4,16 @@ import java.util.Objects;
 
 public class Tarifa_fijo {
 	
-	private int id_tarifa_fijo;
-	private String tipo_tarifa;
-	private String nombre_tarifa;
-	private int id_operador;
-	private String minutos_nacionales;
-	private String minutos_internacionales;
-	private float precio;
-	private float precio_promocion;
-	private float precio_pack;
-	private String duracion_promocion;
+	protected int id_tarifa_fijo;
+	protected String tipo_tarifa;
+	protected String nombre_tarifa;
+	protected int id_operador;
+	protected String minutos_nacionales;
+	protected String minutos_internacionales;
+	protected float precio;
+	protected float precio_promocion;
+	protected float precio_pack;
+	protected String duracion_promocion;
 	
 	public Tarifa_fijo() {
 		

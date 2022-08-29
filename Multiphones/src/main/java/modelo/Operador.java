@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Operador {
 	
-	private int id_operador;
-	private String nombre_operador;
-	private String red_movil;
-	private String red_fija;
+	protected int id_operador;
+	protected String nombre_operador;
+	protected String red_movil;
+	protected String red_fija;
 	
 	public Operador() {
 		

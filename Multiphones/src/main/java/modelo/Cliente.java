@@ -6,24 +6,24 @@ import java.util.Objects;
 
 public class Cliente {
 	
-	private int id_cliente;
-	private String nombre;
-	private String apellidos;
-	private String dni;
-	private String domicilio;
-	private String localidad;
-	private String provincia;
-	private String cod_postal;
-	private Date fecha_nacimiento;
-	private String telefono_contacto;
-	private String email;
-	private Date fecha_contratacion;
-	private Date permanencia;
-	private String telefono_tarifa;
-	private int id_tarifa_movil;
-	private int id_tarifa_fibra;
-	private int id_tarifa_movilYfibra;
-	private int id_tarifa_fijo;
+	protected int id_cliente;
+	protected String nombre;
+	protected String apellidos;
+	protected String dni;
+	protected String domicilio;
+	protected String localidad;
+	protected String provincia;
+	protected String cod_postal;
+	protected Date fecha_nacimiento;
+	protected String telefono_contacto;
+	protected String email;
+	protected Date fecha_contratacion;
+	protected Date permanencia;
+	protected String telefono_tarifa;
+	protected int id_tarifa_movil;
+	protected int id_tarifa_fibra;
+	protected int id_tarifa_movilYfibra;
+	protected int id_tarifa_fijo;
 	
 	public Cliente() {
 		

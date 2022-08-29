@@ -4,20 +4,20 @@ import java.util.Objects;
 
 public class Tarifa_movilYfibra {
 	
-	private int id_tarifa_movilYfibra;
-	private String tipo_tarifa;
-	private String nombre_tarifa;
-	private int id_operador;
-	private String gigas;
-	private String minutos;
-	private int velocidad_fibra;
-	private float precio;
-	private float precio_promocion;
-	private float precio_pack;
-	private String duracion_promocion;
-	private boolean acumula;
-	private boolean comparte;
-	private boolean fijo;
+	protected int id_tarifa_movilYfibra;
+	protected String tipo_tarifa;
+	protected String nombre_tarifa;
+	protected int id_operador;
+	protected String gigas;
+	protected String minutos;
+	protected int velocidad_fibra;
+	protected float precio;
+	protected float precio_promocion;
+	protected float precio_pack;
+	protected String duracion_promocion;
+	protected boolean acumula;
+	protected boolean comparte;
+	protected boolean fijo;
 	
 	public Tarifa_movilYfibra() {
 		
