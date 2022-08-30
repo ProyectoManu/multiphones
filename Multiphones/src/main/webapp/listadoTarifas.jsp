@@ -1,7 +1,5 @@
-<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import="modelo.Tarifa_movil"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-		<h3>TARIFAS:</h3>
+<h3>TARIFAS:</h3>
 		
 		<%	String tarifas = request.getParameter("tarifa");
 		

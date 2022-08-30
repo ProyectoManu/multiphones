@@ -9,12 +9,12 @@
 <body>
  <h1>Tarifas Multiphones</h1>
 <h3>¿QUÉ NECESITA?</h3>
-<form action="listadoTarifas.jsp" method="post">
+<form id="formulario" action="listadoTarifas.jsp" method="post">
 
 		<div>
 		<label for="tarifa"></label>
 		
-		<input type="radio" name="tarifa" id="movil" value="movil" checked>
+		<input type="radio" name="tarifa" id="movil" value="movil">
 		<label for="movil">Móvil</label>
 
 		<input type="radio" name="tarifa" id="fibra" value="fibra">
@@ -54,14 +54,49 @@
 			<label for=""></label>
 		</div>
 	
-	<div>
-	<input type="submit" value="MOSTRAR TARIFAS">
-	</div>
-		
-		
-
+	<div id="masElementos" style="display : none;">
+		<div>
+		<label for="todastarifas">TARIFAS:</label>
+		<input type="text" name="todastarifas" id="todastarifas" value="">	
+	
+			
+		</div>
+		<div>
+		<label for="precio">PRECIO:</label>
+		<input type="text" name="precio" id="precio" value="precio">
+		</div>
+		<div>
+			<label for="preciopromo">PRECIO PROMOCIÓN: </label>
+			<input type="text" name="preciopromo" id="preciopromo" value="preciopromo">
+			<label for="duracion">Duración promoción:</label>
+			<input type="text" name="duracion" id="duracion" value="duracion">
+		</div>
+		<div>
+			<label for="preciopack">PRECIO PACK:</label>
+			<input type="text" name="preciopack" id="preciopack" value="preciopack">
+		</div>
+		<div>
+			<label for="">*Precio pack: precio del pack al contratar Fibra con Móvil</label>
+		</div>
+ </div>
 	
 
 </form>
 </body>
 </html>
+
+<script type="text/javascript">
+	function muestraMas(){
+		var var1=document.getElementById('movil').value;
+		var var2=document.getElementById('fibra').value;
+		var var3=document.getElementById('movilYfibra').value;
+		var var4=document.getElementById('fijo').value;
+		var var5=document.getElementById('masElementos');
+		if(var1=="movil" || var2=="fibra" || var3=="movilYfibra" || var4=="fijo"){
+			var5.style.display="block";
+		}
+		else{
+			var5.style.display="none";
+		}
+	}
+</script>
