@@ -14,11 +14,11 @@ public class Cliente {
 	protected String localidad;
 	protected String provincia;
 	protected String cod_postal;
-	protected Date fecha_nacimiento;
+	protected String fecha_nacimiento;
 	protected String telefono_contacto;
 	protected String email;
-	protected Date fecha_contratacion;
-	protected Date permanencia;
+	protected String fecha_contratacion;
+	protected String permanencia;
 	protected String telefono_tarifa;
 	protected int id_tarifa_movil;
 	protected int id_tarifa_fibra;
@@ -32,8 +32,8 @@ public class Cliente {
 
 
 	public Cliente(int id_cliente, String nombre, String apellidos, String dni, String domicilio, String localidad,
-			String provincia, String cod_postal, Date fecha_nacimiento, String telefono_contacto, String email,
-			Date fecha_contratacion, Date permanencia, String telefono_tarifa, int id_tarifa_movil, int id_tarifa_fibra,
+			String provincia, String cod_postal, String fecha_nacimiento, String telefono_contacto, String email,
+			String fecha_contratacion, String permanencia, String telefono_tarifa, int id_tarifa_movil, int id_tarifa_fibra,
 			int id_tarifa_movilYfibra, int id_tarifa_fijo) {
 		super();
 		this.id_cliente = id_cliente;
@@ -123,11 +123,11 @@ public class Cliente {
 		this.cod_postal = cod_postal;
 	}
 
-	public Date getFecha_nacimiento() {
+	public String getFecha_nacimiento() {
 		return fecha_nacimiento;
 	}
 
-	public void setFecha_nacimiento(Date fecha_nacimiento) {
+	public void setFecha_nacimiento(String fecha_nacimiento) {
 		this.fecha_nacimiento = fecha_nacimiento;
 	}
 
@@ -147,19 +147,19 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public Date getFecha_contratacion() {
+	public String getFecha_contratacion() {
 		return fecha_contratacion;
 	}
 
-	public void setFecha_contratacion(Date fecha_contratacion) {
+	public void setFecha_contratacion(String fecha_contratacion) {
 		this.fecha_contratacion = fecha_contratacion;
 	}
 
-	public Date getPermanencia() {
+	public String getPermanencia() {
 		return permanencia;
 	}
 
-	public void setPermanencia(Date permanencia) {
+	public void setPermanencia(String permanencia) {
 		this.permanencia = permanencia;
 	}
 

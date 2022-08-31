@@ -1,7 +1,7 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.Date;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,11 +42,11 @@ public class ClienteDAOJDBC implements ClienteDAO {
 				String localidad = resultado.getString("localidad");
 				String provincia = resultado.getString("provincia");
 				String cod_postal = resultado.getString("cod_postal");
-				Date fecha_nacimiento = resultado.getDate("fecha_nacimiento");
+				String fecha_nacimiento = resultado.getString("fecha_nacimiento");
 				String telefono_contacto = resultado.getString("telefono_contacto");
 				String email = resultado.getString("email");
-				Date fecha_contratacion = resultado.getDate("fecha_contratacion");
-				Date permanencia = resultado.getDate("permanencia");
+				String fecha_contratacion = resultado.getString("fecha_contratacion");
+				String permanencia = resultado.getString("permanencia");
 				String telefono_tarifa = resultado.getString("telefono_tarifa");
 				int id_tarifa_movil = resultado.getInt("id_tarifa_movil");
 				int id_tarifa_fibra = resultado.getInt("id_tarifa_fibra");
@@ -131,11 +131,11 @@ public class ClienteDAOJDBC implements ClienteDAO {
 				String localidad = resultado.getString("localidad");
 				String provincia = resultado.getString("provincia");
 				String cod_postal = resultado.getString("cod_postal");
-				Date fecha_nacimiento = resultado.getDate("fecha_nacimiento");
+				String fecha_nacimiento = resultado.getString("fecha_nacimiento");
 				String telefono_contacto = resultado.getString("telefono_contacto");
 				String email = resultado.getString("email");
-				Date fecha_contratacion = resultado.getDate("fecha_contratacion");
-				Date permanencia = resultado.getDate("permanencia");
+				String fecha_contratacion = resultado.getString("fecha_contratacion");
+				String permanencia = resultado.getString("permanencia");
 				String telefono_tarifa = resultado.getString("telefono_tarifa");
 				int id_tarifa_movil = resultado.getInt("id_tarifa_movil");
 				int id_tarifa_fibra = resultado.getInt("id_tarifa_fibra");
@@ -187,11 +187,11 @@ public class ClienteDAOJDBC implements ClienteDAO {
 			consultaPreparada.setString(5, c.getLocalidad());
 			consultaPreparada.setString(6, c.getProvincia());
 			consultaPreparada.setString(7, c.getCod_postal());
-			consultaPreparada.setDate(8, c.getFecha_nacimiento());
+			consultaPreparada.setString(8, c.getFecha_nacimiento());
 			consultaPreparada.setString(9, c.getTelefono_contacto());
 			consultaPreparada.setString(10, c.getEmail());
-			consultaPreparada.setDate(11, c.getFecha_contratacion());
-			consultaPreparada.setDate(12, c.getPermanencia());
+			consultaPreparada.setString(11, c.getFecha_contratacion());
+			consultaPreparada.setString(12, c.getPermanencia());
 			consultaPreparada.setString(13, c.getTelefono_tarifa());
 			consultaPreparada.setInt(14, c.getId_tarifa_movil());
 			consultaPreparada.setInt(15, c.getId_tarifa_fibra());
@@ -254,11 +254,11 @@ public class ClienteDAOJDBC implements ClienteDAO {
 			consultaPreparada.setString(5, c.getLocalidad());
 			consultaPreparada.setString(6, c.getProvincia());
 			consultaPreparada.setString(7, c.getCod_postal());
-			consultaPreparada.setDate(8, c.getFecha_nacimiento());
+			consultaPreparada.setString(8, c.getFecha_nacimiento());
 			consultaPreparada.setString(9, c.getTelefono_contacto());
 			consultaPreparada.setString(10, c.getEmail());
-			consultaPreparada.setDate(11, c.getFecha_contratacion());
-			consultaPreparada.setDate(12, c.getPermanencia());
+			consultaPreparada.setString(11, c.getFecha_contratacion());
+			consultaPreparada.setString(12, c.getPermanencia());
 			consultaPreparada.setString(13, c.getTelefono_tarifa());
 			consultaPreparada.setInt(14, c.getId_tarifa_movil());
 			consultaPreparada.setInt(15, c.getId_tarifa_fibra());

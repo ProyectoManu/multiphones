@@ -9,8 +9,7 @@
 <body>
  <h1>Tarifas Multiphones</h1>
 <h3>¿QUÉ NECESITA?</h3>
-<form id="formulario" action="listadoTarifas.jsp" method="post">
-
+<form id="formulario" action="altacliente.jsp" method="post">
 		<div>
 		<label for="tarifa"></label>
 		
@@ -31,68 +30,80 @@
 		<div>
 			
 			<label for="gigas">GIGAS:</label>
-			<input type="range" name="gigas" id="gigas" min="0" max="1000" step="20"
-			value="gigas">
-			<label for=""></label>
+			<input type="range" name="gigas" id="gigas" min="0" max="200" step="20"
+			value="gigas" oninput="myFunction()">
+			<p id="total"></p>
 
 		</div>
+	<script>
+function myFunction() {
+  var x = document.getElementById("gigas").value;
+  document.getElementById("total").innerHTML = " " + x;
+}
+
+</script>
 	<h3>¿CUÁNTOS MINUTOS NECESITA?</h3>
 		<div>
 			
 			<label for="minutos">MINUTOS:</label>
-			<input type="range" name="minutos" id="minutos" min="0" max="1000" step="20"
-			value="minutos">
-			<label for=""></label>
+			<input type="range" name="minutos" id="minutos" min="100" max="1000" step="100"
+			value="minutos" oninput="myFunction2()">>
+			<p id="total2"></p>
 
 		</div>
+        <script>
+            function myFunction2() {
+              var x = document.getElementById("minutos").value;
+              document.getElementById("total2").innerHTML = " " + x;
+            }
+            
+            </script>
 	<h3>¿CUÁNTA VELOCIDAD DE FIBRA NECESITA?</h3>
 		<div>
 			
 			<label for="velocidad">VELOCIDAD FIBRA:</label>
-			<input type="range" name="velocidad" id="velocidad" min="0" max="500" step="20"
-			value="velocidad">
-			<label for=""></label>
+			<input type="range" name="velocidad" id="velocidad" min="100" max="1000" step="100"
+			value="velocidad" oninput="myFunction3()">
+			<p id="total3"></p>
 		</div>
-	
+		<script>
+            function myFunction3() {
+              var x = document.getElementById("velocidad").value;
+              document.getElementById("total3").innerHTML = " " + x;
+            }
+            </script>
 	<div id="masElementos" style="display : none;">
-		<div>
+		
 		<label for="todastarifas">TARIFAS:</label>
-		<input type="text" name="todastarifas" id="todastarifas" value="">	
-	
-			
-		</div>
-		<div>
+		<input type="text" name="todastarifas" id="todastarifas" value="todastarifas">	
+		
 		<label for="precio">PRECIO:</label>
 		<input type="text" name="precio" id="precio" value="precio">
-		</div>
-		<div>
-			<label for="preciopromo">PRECIO PROMOCIÓN: </label>
-			<input type="text" name="preciopromo" id="preciopromo" value="preciopromo">
-			<label for="duracion">Duración promoción:</label>
-			<input type="text" name="duracion" id="duracion" value="duracion">
-		</div>
-		<div>
-			<label for="preciopack">PRECIO PACK:</label>
-			<input type="text" name="preciopack" id="preciopack" value="preciopack">
-		</div>
-		<div>
-			<label for="">*Precio pack: precio del pack al contratar Fibra con Móvil</label>
-		</div>
+		
+		<label for="preciopromo">PRECIO PROMOCIÓN: </label>
+		<input type="text" name="preciopromo" id="preciopromo" value="preciopromo">
+
+		<label for="duracion">Duración promoción:</label>
+		<input type="text" name="duracion" id="duracion" value="duracion">
+	
+		<label for="preciopack">PRECIO PACK:</label>
+		<input type="text" name="preciopack" id="preciopack" value="preciopack">
+		
+		<label for="">*Precio pack: precio del pack al contratar Fibra con Móvil</label>
+	
  </div>
 	
 
 </form>
 </body>
-</html>
-
-<script type="text/javascript">
+<script>
 	function muestraMas(){
 		var var1=document.getElementById('movil').value;
 		var var2=document.getElementById('fibra').value;
 		var var3=document.getElementById('movilYfibra').value;
 		var var4=document.getElementById('fijo').value;
 		var var5=document.getElementById('masElementos');
-		if(var1=="movil" || var2=="fibra" || var3=="movilYfibra" || var4=="fijo"){
+		if(var1=='movil' || var2=='fibra' || var3=='movilYfibra' || var4=='fijo'){
 			var5.style.display="block";
 		}
 		else{
@@ -100,3 +111,6 @@
 		}
 	}
 </script>
+</html>
+
+
