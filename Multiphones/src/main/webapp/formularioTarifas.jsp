@@ -92,7 +92,9 @@ function myFunction() {
 		<label for="">*Precio pack: precio del pack al contratar Fibra con Móvil</label>
 	
  </div>
-	
+<div>
+	<input type="submit" value="CONTRATAR">
+</div>
 
 </form>
 </body>

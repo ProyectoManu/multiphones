@@ -1,9 +1,18 @@
 package modelo;
-
+/**
+ * Clase Tarifa_fibra
+ */
 import java.util.Objects;
-
+/**
+ * Clase que modelo las tarifas de Fibra
+ * @author Araceli Cuadra y Manuel López
+ *
+ */
 public class Tarifa_fibra {
 
+	/**
+	 * Variables estado del objeto Tarifa_fibra
+	 */
 	protected int id_tarifa_fibra;
 	protected String tipo_tarifa;
 	protected String nombre_tarifa;
@@ -15,10 +24,28 @@ public class Tarifa_fibra {
 	protected String duracion_promocion;
 	protected boolean fijo;
 	
+	/**
+	 * Constructor sin parámetros que crea una Tarifa_fibra
+	 */
 	public Tarifa_fibra() {
 		
 	}
-
+	/**
+	 * Constructor parametralizado que crea una Tarifa_fibra dados
+	 * los parámetros id_tarifa_fibra, tipo_tarifa, nombre_tarifa,
+	 * id_operador, velocidad_fibra, precio, precio_promocion,
+	 * precio_pack, duracion_promocion y fijo
+	 * @param id_tarifa_fibra int con el id de la tarifa de fibra que la identifica
+	 * @param tipo_tarifa String con el tipo de tarifa contrato, prepago, etc
+	 * @param nombre_tarifa String con el nombre de la tarifa
+	 * @param id_operador int que identifica al operador de la tarifa
+	 * @param velocidad_fibra int número con la velocidad de la fibra
+	 * @param precio float el precio de la tarifa
+	 * @param precio_promocion float el precio en promocion de esa tarifa
+	 * @param precio_pack float el precio en el caso que vaya en un pack con más productos
+	 * @param duracion_promocion String la duracion de la promocion
+	 * @param fijo boolean true si tiene un fijo la fibra y false para el caso contrario
+	 */
 	public Tarifa_fibra(int id_tarifa_fibra, String tipo_tarifa, String nombre_tarifa, int id_operador,
 			int velocidad_fibra, float precio, float precio_promocion, float precio_pack, String duracion_promocion,
 			boolean fijo) {
@@ -34,7 +61,10 @@ public class Tarifa_fibra {
 		this.duracion_promocion = duracion_promocion;
 		this.fijo = fijo;
 	}
-
+	/**
+	 * Método de accesor que devuelve el id de la tarifa_fibra
+	 * @return int con el id de la tarifa_fibra
+	 */
 	public int getId_tarifa_fibra() {
 		return id_tarifa_fibra;
 	}
@@ -115,6 +145,9 @@ public class Tarifa_fibra {
 		this.fijo = fijo;
 	}
 
+	/**
+	 * Muestra la Tarifa_fibra con todos sus datos
+	 */
 	@Override
 	public String toString() {
 		return "Tarifas_fibra [id_tarifa_fibra=" + id_tarifa_fibra + ", tipo_tarifa=" + tipo_tarifa + ", nombre_tarifa="
@@ -122,7 +155,9 @@ public class Tarifa_fibra {
 				+ precio + ", precio_promocion=" + precio_promocion + ", precio_pack=" + precio_pack
 				+ ", duracion_promocion=" + duracion_promocion + ", fijo=" + fijo + "]";
 	}
-
+	/**
+	 * Método para comparar dos objetos Tarifa_fibra
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(id_tarifa_fibra);
