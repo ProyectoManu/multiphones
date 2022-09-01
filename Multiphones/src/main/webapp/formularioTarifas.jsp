@@ -77,20 +77,43 @@ function myFunction() {
 		<label for="todastarifas">TARIFAS:</label>
 		<input type="text" name="todastarifas" id="todastarifas" value="todastarifas">	
 		
-		<label for="precio">PRECIO:</label>
-		<input type="text" name="precio" id="precio" value="precio">
-		
-		<label for="preciopromo">PRECIO PROMOCIÓN: </label>
-		<input type="text" name="preciopromo" id="preciopromo" value="preciopromo">
+<?php 
+	
+	$cn = mysql_connect('localhost', $root, $123456);
 
-		<label for="duracion">Duración promoción:</label>
-		<input type="text" name="duracion" id="duracion" value="duracion">
+	mysql_select_db('multiphones',$cn);
+?>
 	
-		<label for="preciopack">PRECIO PACK:</label>
-		<input type="text" name="preciopack" id="preciopack" value="preciopack">
-		
-		<label for="">*Precio pack: precio del pack al contratar Fibra con Móvil</label>
+	<%-- Quiero poner si movil esta seleccionado ejecute la selección siguiente php, si no nada e ir
+		poniendo else if con todas las posibilidades
+		 --%>
+<?php
+
+$rs = mysql_query( "SELECT nombre_tarifa, gigas, minutos FROM tarifas_movil");
+
+$n= mysql_num_rows($query);
+?>
+<table> 
+      <tr> 
+          <td> <font face="Arial">TARIFA:</font> </td> 
+          <td> <font face="Arial">GIGAS:</font> </td> 
+          <td> <font face="Arial">MINUTOS:</font> </td> 
+          
+      </tr>
+<?php
+for ($i=0;$i<$n;$i++){
+?>
+     <tr> 
+          <td><?php echo mysql_result($rs, $i,0);?></td> 
+          <td><?php echo mysql_result($rs, $i,1);?></td> 
+          <td><?php echo mysql_result($rs, $i,2);?></td> 
+          
+     </tr>
+ <?php  
+} 
+?>
 	
+ </table>
  </div>
 <div>
 	<input type="submit" value="CONTRATAR">
@@ -100,12 +123,12 @@ function myFunction() {
 </body>
 <script>
 	function muestraMas(){
-		var var1=document.getElementById('movil').value;
-		var var2=document.getElementById('fibra').value;
-		var var3=document.getElementById('movilYfibra').value;
-		var var4=document.getElementById('fijo').value;
-		var var5=document.getElementById('masElementos');
-		if(var1=='movil' || var2=='fibra' || var3=='movilYfibra' || var4=='fijo'){
+		var var1=document.getElementById("movil").value;
+		var var2=document.getElementById("fibra").value;
+		var var3=document.getElementById("movilYfibra").value;
+		var var4=document.getElementById("fijo").value;
+		var var5=document.getElementById("masElementos");
+		if(var1=="movil" || var2=="fibra" || var3=="movilYfibra" || var4=="fijo"){
 			var5.style.display="block";
 		}
 		else{

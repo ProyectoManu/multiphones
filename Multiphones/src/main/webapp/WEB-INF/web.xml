@@ -19,4 +19,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ClientesServlet</display-name>
+    <servlet-name>ClientesServlet</servlet-name>
+    <servlet-class>controladores.ClientesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClientesServlet</servlet-name>
+    <url-pattern>/ClientesServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

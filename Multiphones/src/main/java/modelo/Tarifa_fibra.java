@@ -62,85 +62,152 @@ public class Tarifa_fibra {
 		this.fijo = fijo;
 	}
 	/**
-	 * Método de accesor que devuelve el id de la tarifa_fibra
+	 * Método accesor que devuelve el id de la tarifa_fibra
 	 * @return int con el id de la tarifa_fibra
 	 */
 	public int getId_tarifa_fibra() {
 		return id_tarifa_fibra;
 	}
-
+	/**
+	 * Método de establecimiento que cambia el id de la tarifa_fibra
+	 * pasado por parámetro el nuevo id
+	 * @param id_tarifa_fibra int nuevo id de tarifa_fibra
+	 */
 	public void setId_tarifa_fibra(int id_tarifa_fibra) {
 		this.id_tarifa_fibra = id_tarifa_fibra;
 	}
-
+	/**
+	 * Método accesor que devuelve el tipo de tarifa
+	 * @return String tipo_tarifa con el tipo de tarifa
+	 */
 	public String getTipo_tarifa() {
 		return tipo_tarifa;
 	}
-
+/**
+ * Método de establecimiento que cambia el tipo de tarifa
+ * pasado por parámetro el nuevo tipo
+ * @param tipo_tarifa String El tipo de tarifa
+ */
 	public void setTipo_tarifa(String tipo_tarifa) {
 		this.tipo_tarifa = tipo_tarifa;
 	}
-
+/**
+ * Método accesor que devuelve el nombre de la tarifa
+ * @return String nombre_tarifa con el nombre de la tarifa
+ */
 	public String getNombre_tarifa() {
 		return nombre_tarifa;
 	}
-
+/**
+ * Método de establecimiento que cambia el nombre de la tarifa
+ * pasado por parámetro el nuevo nombre
+ * @param nombre_tarifa String el nombre de la tarifa
+ */
 	public void setNombre_tarifa(String nombre_tarifa) {
 		this.nombre_tarifa = nombre_tarifa;
 	}
-
+	/**
+	 * Método accesor que devuelve el id del operador
+	 * @return int id_operador el id del operador
+	 */
 	public int getId_operador() {
 		return id_operador;
 	}
-
+	/**
+	 * Método de establecimiento que cambia el id del operador
+	 * pasado por parámetro el nuevo id
+	 * @param id_operador int el nuevo id de operador
+	 */
 	public void setId_operador(int id_operador) {
 		this.id_operador = id_operador;
 	}
-
+	/**
+	 * Método accesor que devuelve la velocidad de la fibra
+	 * @return int velocidad_fibra con la velocidad de la fibra
+	 */
 	public int getVelocidad_fibra() {
 		return velocidad_fibra;
 	}
-
+	/**
+	 * Método de establecimiento que cambia la velocidad de la fibra
+	 * pasado por parámetro la nueva velocidad
+	 * @param velocidad_fibra int con la nueva velocidad de la fibra
+	 */
 	public void setVelocidad_fibra(int velocidad_fibra) {
 		this.velocidad_fibra = velocidad_fibra;
 	}
-
+	/**
+	 * Método accesor que devuelve el precio de la tarifa
+	 * @return Float precio con el precio de la tarifa
+	 */
 	public float getPrecio() {
 		return precio;
 	}
-
+	/**
+	 * Método de establecimiento que cambia el precio de una tarifa
+	 * pasado por parámetro el nuevo precio
+	 * @param precio float con el nuevo precio
+	 */
 	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
-
+	/**
+	 * Método accesor que devuelve el precio en promoción de la tarifa
+	 * @return Float precio_promocion con el precio en promoción de la tarifa
+	 */
 	public float getPrecio_promocion() {
 		return precio_promocion;
 	}
-
+	/**
+	 * Método de establecimiento que cambia el precio en promocion de una tarifa
+	 * pasado por parámetro el nuevo precio en promocion
+	 * @param precio_promocion float con el nuevo precio en promocion
+	 */
 	public void setPrecio_promocion(float precio_promocion) {
 		this.precio_promocion = precio_promocion;
 	}
-
+	/**
+	 * Método accesor que devuelve el precio pack de la tarifa
+	 * @return Float precio_pack con el precio en pack de la tarifa
+	 */
 	public float getPrecio_pack() {
 		return precio_pack;
 	}
-
+	/**
+	 * Método de establecimiento que cambia el precio pack de la tarifa
+	 * pasado por parámetro el nuevo precio pack
+	 * @param precio_pack float con el nuevo precio pack
+	 */
 	public void setPrecio_pack(float precio_pack) {
 		this.precio_pack = precio_pack;
 	}
-
+	/**
+	 * Método accesor que devuelve la duración de la promoción
+	 * @return String duracion_promocion con la duración de la promocion
+	 */
 	public String getDuracion_promocion() {
 		return duracion_promocion;
 	}
-
+	/**
+	 * Método de establecimiento que cambia la duracion de la promocion
+	 * pasado por parámetro la nueva duracion
+	 * @param duracion_promocion String la duracion de la promocion
+	 */
 	public void setDuracion_promocion(String duracion_promocion) {
 		this.duracion_promocion = duracion_promocion;
 	}
-
+	/**
+	 * Método accesor que devuelve si tiene fijo o no
+	 * @return boolean isFijo true si tiene fijo y false para el caso contrario
+	 */
 	public boolean isFijo() {
 		return fijo;
 	}
-
+	/**
+	 * Método de establecimiento que cambia a true o false si tiene fijo o no 
+	 * correlativamente
+	 * @param fijo boolean true si tiene fijo y false en caso contrario
+	 */
 	public void setFijo(boolean fijo) {
 		this.fijo = fijo;
 	}
