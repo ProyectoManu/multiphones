@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,19 @@
 </head>
 <body>
  <h1> Introduzca sus datos</h1>
+ <% 
+ String tarifa;
+ 
+ if ( request.getParameter("tarifas_movil")!=null){
+ 		tarifa=request.getParameter("tarifas_movil");
+ }else if (request.getParameter("tarifas_fibra")!=null){
+ 		tarifa=request.getParameter("tarifas_fibra");
+ }else if (request.getParameter("tarifas_movilYfibra")!=null){
+ 		tarifa=request.getParameter("tarifas_movilYfibra");	
+ } else{
+ 	tarifa = request.getParameter("tarifas_fijo");
+%>
+ <p> <%System.println("TARIFA SELECCIONADA: "+tarifa); %> </p>
 
     <form action="altacliente" method="post">
 
