@@ -4,6 +4,14 @@
    <%@ page import="modelo.Tarifa_fijo" %>
    <%@ page import="modelo.Tarifa_fibra" %>
    <%@ page import="modelo.Tarifa_movilYfibra" %>
+    <%@ page import="dao.Tarifa_movilDAO" %>
+      <%@ page import="dao.Tarifa_fibraDAO" %>
+        <%@ page import="dao.Tarifa_movilYfibraDAO" %>
+       <%@ page import="dao.Tarifa_fijoDAO" %>
+       <%@ page import="dao.Tarifa_movilDAOJDBC" %>
+       <%@ page import="dao.Tarifa_fibraDAOJDBC" %>
+       <%@ page import="dao.Tarifa_fijoDAOJDBC" %>
+       <%@ page import="dao.Tarifa_movilYfibraDAOJDBC" %>
    <%@ page import ="java.util.List"%>
 <!DOCTYPE html>
 <html>
@@ -19,10 +27,10 @@
 		<div id="tarifa">
 			<label for="tarifa"></label>
 		
-			<input type="radio" name="tarifa" id="movil" value="movil" onchange="muestraMas()">
+			<input type="radio" name="tarifa" id="movil" value="movil" onchange="muestraMovil()">
 			<label for="movil">Móvil</label>
 
-			<input type="radio" name="tarifa" id="fibra" value="fibra" onclick="muestraMas()">
+			<input type="radio" name="tarifa" id="fibra" value="fibra" onclick="muestraFibra()">
 			<label for="fibra">Fibra</label>
 
 			<input type="radio" name="tarifa" id="movilYfibra" value="movilYfibra" onclick="muestraMas()">
@@ -79,10 +87,19 @@ function myFunction() {
             }
             </script>
 <%
-List<Tarifa_movil> listaTarifa_movil = (List<Tarifa_movil>)request.getAttibute("listaTarifa_movil");
-List<Tarifa_fibra> listaTarifa_fibra = (List<Tarifa_fibra>)request.getAttibute("listaTarifa_fibra");
-List<Tarifa_movilYfibra> listaTarifa_movilYfibra = (List<Tarifa_movilYfibra>)request.getAttibute("listaTarifa_movilYfibra");
-List<Tarifa_fijo> listaTarifa_fijo = (List<Tarifa_fijo>)request.getAttibute("listaTarifa_fijo");
+Tarifa_movilDAO tarifaMovilDAO = new Tarifa_movilDAOJDBC();
+List<Tarifa_movil> listaTarifa_movil = tarifaMovilDAO.getTarifa_movil();
+
+Tarifa_fibraDAO tarifaFibraDAO = new Tarifa_fibraDAOJDBC();
+List<Tarifa_fibra> listaTarifa_fibra = tarifaFibraDAO.getTarifa_fibra();
+
+Tarifa_movilYfibraDAO tarifaMovilYfibraDAO = new Tarifa_movilYfibraDAOJDBC();
+List<Tarifa_movilYfibra> listaTarifa_movilYfibra = tarifaMovilYfibraDAO.getTarifa_movilYfibra();
+
+Tarifa_fijoDAO tarifaFijoDAO = new Tarifa_fijoDAOJDBC();
+List<Tarifa_fijo> listaTarifa_fijo = tarifaFijoDAO.getTarifa_fijo();
+
+
 %>
 	<div id="masTmovil" style="display : none;" >
 		
@@ -164,19 +181,22 @@ List<Tarifa_fijo> listaTarifa_fijo = (List<Tarifa_fijo>)request.getAttibute("lis
 	</div>
 	</html>
 	<script>
-	function muestraMas(){
+	function muestraMovil(){
 
-		var var1=document.getElementsById("tarifa").value;
+		var movil =document.getElementsById("masTmovil");
+		var velocidad=document.getElementsById("velocidadnecesita");
+		movil.style.display="block";
+		velocidad.style.display="none";
 		
-		var var2=document.getElementById("masTmovil");
-		var var3=document.getElementById("velocidadnecesita");
-		if(var1=="movil"){
-			var2.style.display="block";
-			var3.style.display="none"
-		}
-		else{
-			var2.style.display="none";
-		}
+	}
+	function muestraFibra(){
+
+		var fibra =document.getElementsById("masTfibra");
+		var minutos=document.getElementsById("minutosnecesita");
+		var gigas = document.getElementsById("gigasnecesita");
+		fibra.style.display="block";
+		minutos.style.display="none";
+		gigas.style.display="none";
 	}
 	</script>
  </div>

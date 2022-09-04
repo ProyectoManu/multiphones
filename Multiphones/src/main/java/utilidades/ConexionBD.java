@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class ConexionBD {
 
-	private static final String database = "multiphone";
+	private static final String database = "multiphones";
 	private static final String usuario = "root";
 	private static final String contraseña = "123456";
 	private static final String url="jdbc:mysql://localhost/"+database;
