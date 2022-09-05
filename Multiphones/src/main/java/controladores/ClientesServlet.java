@@ -1,5 +1,10 @@
 package controladores;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import dao.ClienteDAO;
+import dao.ClienteDAOJDBC;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -7,16 +12,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import modelo.Cliente;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
  * Servlet implementation class ClientesServlet
  */
-@WebServlet("/altacliente")
+@WebServlet("/insertarCliente")
 public class ClientesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -44,6 +43,30 @@ public class ClientesServlet extends HttpServlet {
 		
 		
 		PrintWriter out = response.getWriter();
+		
+		String tarifam = request.getParameter("tarifas_movil");
+		if (tarifam ==null ) {
+			tarifam="1";
+		}
+		String tarifaf = request.getParameter("tarifas_fibra");
+		if (tarifaf ==null) {
+			tarifaf="1";
+		}
+		String tarifamf = request.getParameter("tarifas_movilYfibra");
+		if (tarifamf ==null) {
+			tarifamf="1";
+		}
+		String tarifafi = request.getParameter("tarifas_fijo");
+		if (tarifafi ==null) {
+			tarifafi="1";
+		}
+		int tarifaMovil= Integer.parseInt(tarifam);
+		int tarifaFibra= Integer.parseInt(tarifaf);
+		int tarifaMovilYfibra= Integer.parseInt(tarifamf);
+		int tarifaFijo=Integer.parseInt(tarifafi);
+		
+		
+
 		
 		String nombre=request.getParameter("nombre");
 		String apellidos=request.getParameter("apellidos");
@@ -85,12 +108,12 @@ public class ClientesServlet extends HttpServlet {
 		out.println("</body>\r\n"
 				+ "</html>");
 
-		Cliente c = new Cliente(nombre,apellidos, dni,
+		Cliente cliente = new Cliente(nombre,apellidos, dni,
 				   domicilio, localidad, provincia, cod_postal, fecha_nacimiento,
-				   telefono_contacto, email, telefono_tarifa);
+				   telefono_contacto, email, telefono_tarifa, tarifaMovil, tarifaFibra, tarifaMovilYfibra, tarifaFijo);
 		
-		ClienteDAO clienteDAO = new ClienteDAOMySQL(c);
-		clienteDAO.insertarCliente(c);
+		ClienteDAO clienteDAO = new ClienteDAOJDBC();
+		clienteDAO.insertarCliente(cliente);
 		
 		
 	}

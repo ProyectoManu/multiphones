@@ -66,7 +66,7 @@ public class Cliente {
  * @param id_tarifa_movilYfibra int número que identifica una tarifa de móvil y fibra
  * @param id_tarifa_fijo int número que identifica una tarifa de fijo
  */
-
+	
 	public Cliente(int id_cliente, String nombre, String apellidos, String dni, String domicilio, String localidad,
 			String provincia, String cod_postal, String fecha_nacimiento, String telefono_contacto, String email,
 			String fecha_contratacion, String permanencia, String telefono_tarifa, int id_tarifa_movil, int id_tarifa_fibra,
@@ -84,7 +84,6 @@ public class Cliente {
 		this.telefono_contacto = telefono_contacto;
 		this.email = email;
 		this.fecha_contratacion = fecha_contratacion;
-		
 		this.permanencia = permanencia;
 		this.telefono_tarifa = telefono_tarifa;
 		this.id_tarifa_movil = id_tarifa_movil;
@@ -92,6 +91,48 @@ public class Cliente {
 		this.id_tarifa_movilYfibra = id_tarifa_movilYfibra;
 		this.id_tarifa_fijo = id_tarifa_fijo;
 	}
+	
+/**
+ * Constructor parametrizado que crea un cliente con tarifa asociada (nombre, apellidos, dni,
+ * domicilio, localidad, provincia, cod_postal, fecha_nacimiento, telefono_contacto
+ * email, telefono_tarifa, id_tarifa_movil)
+ * @param nombre String nombre del cliente
+ * @param apellidos String apellidos del cliente
+ * @param dni String dni del cliente
+ * @param domicilio String domicilio del cliente
+ * @param localidad String localidad del cliente
+ * @param provincia String provincia del cliente
+ * @param cod_postal String código postal del cliente
+ * @param fecha_nacimiento String fecha nacimiento del cliente
+ * @param telefono_contacto String teléfono de contacto del cliente
+ * @param email String email del cliente
+ * @param telefono_tarifa String número de teléfono que contrata el cliente
+ * @param id_tarifa_movil int número que identifica una tarifa de móvil
+ * @param id_tarifa_fibra int número que identifica una tarifa de fibra
+ * @param id_tarifa_movilYfibra int número que identifica una tarifa de móvil y fibra
+ * @param id_tarifa_fijo int número que identifica una tarifa de fijo
+ */
+
+public Cliente(String nombre, String apellidos, String dni, String domicilio, String localidad, String provincia,
+		String cod_postal, String fecha_nacimiento, String telefono_contacto, String email, String telefono_tarifa,
+		int id_tarifa_movil, int id_tarifa_fibra, int id_tarifa_movilYfibra, int id_tarifa_fijo) {
+	super();
+	this.nombre = nombre;
+	this.apellidos = apellidos;
+	this.dni = dni;
+	this.domicilio = domicilio;
+	this.localidad = localidad;
+	this.provincia = provincia;
+	this.cod_postal = cod_postal;
+	this.fecha_nacimiento = fecha_nacimiento;
+	this.telefono_contacto = telefono_contacto;
+	this.email = email;
+	this.telefono_tarifa = telefono_tarifa;
+	this.id_tarifa_movil = id_tarifa_movil;
+	this.id_tarifa_fibra = id_tarifa_fibra;
+	this.id_tarifa_movilYfibra = id_tarifa_movilYfibra;
+	this.id_tarifa_fijo = id_tarifa_fijo;
+}
 
 /**
  * Método accesor que devuelve el id del cliente

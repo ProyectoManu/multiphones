@@ -5,12 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Datos cliente</title>
 </head>
 <body>
  <h1> Introduzca sus datos</h1>
- <% 
- String tarifa;
+ 
+          
+ 
+<%String tarifa=null;
  
  if ( request.getParameter("tarifas_movil")!=null){
  		tarifa=request.getParameter("tarifas_movil");
@@ -20,10 +22,15 @@
  		tarifa=request.getParameter("tarifas_movilYfibra");	
  } else{
  	tarifa = request.getParameter("tarifas_fijo");
-%>
- <p> <%System.println("TARIFA SELECCIONADA: "+tarifa); %> </p>
-
-    <form action="altacliente" method="post">
+ }
+ %>
+ 
+  <div>
+  	<label for="tarifaelegida">TARIFA ELEGIDA:<%=tarifa %> </label>
+  </div>
+ 
+    
+    <form action="insertarCliente" method="post">
 
     <div>
         <label for="nombre"> NOMBRE: </label>
@@ -68,7 +75,7 @@
     </div>
     <div>
         <label for="telefono_tarifa"> TELEFONO TARIFA: </label>
-        <input type="checkbox" name="telefono_tarifa" id="telefono_tarifa">
+        <input type="text" name="telefono_tarifa" id="telefono_tarifa">
     </div>
     <div>  
     <input type="submit" value="Aceptar">

@@ -22,66 +22,66 @@
 <body>
  <h1>Tarifas Multiphones</h1>
 <h3>¿QUÉ NECESITA?</h3>
-<form id="formulario" action="listadoTarifas.jsp" method="post">
+<form id="formulario" action="altacliente.jsp" method="post">
 
 		<div id="tarifa">
 			<label for="tarifa"></label>
 		
-			<input type="radio" name="tarifa" id="movil" value="movil" onchange="muestraMovil()">
+			<input type="radio" name="tarifa" id="movil" value="movil" onclick="muestraMovil()">
 			<label for="movil">Móvil</label>
 
 			<input type="radio" name="tarifa" id="fibra" value="fibra" onclick="muestraFibra()">
 			<label for="fibra">Fibra</label>
 
-			<input type="radio" name="tarifa" id="movilYfibra" value="movilYfibra" onclick="muestraMas()">
+			<input type="radio" name="tarifa" id="movilYfibra" value="movilYfibra" onclick="muestraMovilYfibra()">
 			<label for="movilYfibra">Móvil + Fibra</label>
 
-			<input type="radio" name="tarifa" id="fijo" value="fijo" onclick="muestraMas()">
+			<input type="radio" name="tarifa" id="fijo" value="fijo" onclick="muestraFijo()">
 			<label for="fijo">Fijo</label>
 		</div>
 	
-	<h3>¿CUÁNTOS GIGAS NECESITA?</h3>
+	
 		<div id="gigasnecesita" style="display : block;">
-			
+			<h3>¿CUÁNTOS GIGAS NECESITA?</h3>
 			<label for="gigas">GIGAS:</label>
 			<input type="range" name="gigas" id="gigas" min="0" max="200" step="20"
-			value="gigas" oninput="myFunction()">
+			value="gigas" oninput="gigasRango()">
 			<p id="total"></p>
 
 		</div>
 	<script>
-function myFunction() {
+function gigasRango() {
   var x = document.getElementById("gigas").value;
   document.getElementById("total").innerHTML = " " + x;
 }
 
 </script>
-	<h3>¿CUÁNTOS MINUTOS NECESITA?</h3>
+	
 		<div id="minutosnecesita" style="display : block;">
-			
+			<h3>¿CUÁNTOS MINUTOS NECESITA?</h3>
 			<label for="minutos">MINUTOS:</label>
 			<input type="range" name="minutos" id="minutos" min="100" max="1000" step="100"
-			value="minutos" oninput="myFunction2()">
+			value="minutos" oninput="minutosRango()">
 			<p id="total2"></p>
 
 		</div>
         <script>
-            function myFunction2() {
+            function minutosRango() {
               var x = document.getElementById("minutos").value;
               document.getElementById("total2").innerHTML = " " + x;
             }
             
             </script>
-	<h3>¿CUÁNTA VELOCIDAD DE FIBRA NECESITA?</h3>
+	
 		<div id="velocidadnecesita" style="display : block;" >
-			
+			<h3>¿CUÁNTA VELOCIDAD DE FIBRA NECESITA?</h3>
 			<label for="velocidad">VELOCIDAD FIBRA:</label>
 			<input type="range" name="velocidad" id="velocidad" min="100" max="1000" step="100"
-			value="velocidad" oninput="myFunction3()" onclick="muestraMas()">
+			value="velocidad" oninput="velocidadRango()" onclick="muestraMas()">
 			<p id="total3"></p>
 		</div>
 		<script>
-            function myFunction3() {
+            function velocidadRango() {
               var x = document.getElementById("velocidad").value;
               document.getElementById("total3").innerHTML = " " + x;
             }
@@ -108,7 +108,8 @@ List<Tarifa_fijo> listaTarifa_fijo = tarifaFijoDAO.getTarifa_fijo();
 			<%
 				for (Tarifa_movil tm: listaTarifa_movil){
 			%>
-				<option value="<%=tm.getId_tarifa_movil()%>">TARIFA:<%=tm.getNombre_tarifa()%>
+				<p>TARIFAS:</p>
+				<option value="<%=tm.getId_tarifa_movil()%>"><%=tm.getId_tarifa_movil() %> <p><%=tm.getNombre_tarifa()%></p>
 					<p>GIGAS: <%=tm.getGigas()%></p>
 					<p>MINUTOS: <%=tm.getMinutos()%></p>
 					<p>PRECIO: <%=tm.getPrecio()%></p>
@@ -128,7 +129,8 @@ List<Tarifa_fijo> listaTarifa_fijo = tarifaFijoDAO.getTarifa_fijo();
 			<%
 				for (Tarifa_fibra tf: listaTarifa_fibra){
 			%>
-				<option value="<%=tf.getId_tarifa_fibra()%>">TARIFA:<%=tf.getNombre_tarifa()%>
+				<p>TARIFAS:</p>
+				<option value="<%=tf.getId_tarifa_fibra()%>"> <%=tf.getNombre_tarifa()%>
 					 <p>VELOCIDAD FIBRA: <%=tf.getVelocidad_fibra()%></p>
 					<p>PRECIO: <%=tf.getPrecio()%></p>
 					<p>PRECIO PROMOCIÓN: <%=tf.getPrecio_promocion()%></p>
@@ -146,7 +148,8 @@ List<Tarifa_fijo> listaTarifa_fijo = tarifaFijoDAO.getTarifa_fijo();
 			<%
 				for (Tarifa_movilYfibra tmf: listaTarifa_movilYfibra){
 			%>
-				<option value="<%=tmf.getId_tarifa_movilYfibra()%>">TARIFA:<%=tmf.getNombre_tarifa()%>
+				<p>TARIFAS:</p>
+				<option value="<%=tmf.getId_tarifa_movilYfibra()%>"> <%=tmf.getNombre_tarifa()%>
 					 <p>GIGAS: <%=tmf.getGigas()%></p>
 					<p>MINUTOS: <%=tmf.getMinutos()%></p>
 					<p>VELOCIDAD FIBRA: <%=tmf.getVelocidad_fibra()%></p>
@@ -166,7 +169,8 @@ List<Tarifa_fijo> listaTarifa_fijo = tarifaFijoDAO.getTarifa_fijo();
 			<%
 				for (Tarifa_fijo tfi: listaTarifa_fijo){
 			%>
-				<option value="<%=tfi.getId_tarifa_fijo()%>">TARIFA:<%=tfi.getNombre_tarifa()%>
+				<p>TARIFAS:</p>
+				<option value="<%=tfi.getId_tarifa_fijo()%>"> <%=tfi.getNombre_tarifa()%>
 					 <p>MIN NACIONALES: <%=tfi.getMinutos_nacionales()%></p>
 					<p>MIN INTERNACIONALES: <%=tfi.getMinutos_internacionales()%></p>
 					<p>PRECIO: <%=tfi.getPrecio()%></p>
@@ -179,24 +183,80 @@ List<Tarifa_fijo> listaTarifa_fijo = tarifaFijoDAO.getTarifa_fijo();
 		</select>
 		<label for="">*Precio pack: precio del pack al contratar con más servicios</label>
 	</div>
+	<div>  
+    <input type="submit" value="CONTRATAR">
+    
+    </div>
 	</html>
 	<script>
 	function muestraMovil(){
 
-		var movil =document.getElementsById("masTmovil");
-		var velocidad=document.getElementsById("velocidadnecesita");
+		var movil =document.getElementById("masTmovil");
+		var velocidad=document.getElementById("velocidadnecesita");
+		var minutos=document.getElementById("minutosnecesita");
+		var gigas = document.getElementById("gigasnecesita");
+		var fibra =document.getElementById("masTfibra");
+		var movilYfibra =document.getElementById("masTmovilYfibra");
+		var fijo =document.getElementById("masTfijo");
 		movil.style.display="block";
 		velocidad.style.display="none";
+		fibra.style.display="none";
+		movilYfibra.style.display="none";
+		fijo.style.display="none";
+		minutos.style.display="block";
+		gigas.style.display="block";
 		
 	}
 	function muestraFibra(){
 
-		var fibra =document.getElementsById("masTfibra");
-		var minutos=document.getElementsById("minutosnecesita");
-		var gigas = document.getElementsById("gigasnecesita");
+		var fibra =document.getElementById("masTfibra");
+		var minutos=document.getElementById("minutosnecesita");
+		var gigas = document.getElementById("gigasnecesita");
+		var movilYfibra =document.getElementById("masTmovilYfibra");
+		var fijo =document.getElementById("masTfijo");
+		var movil =document.getElementById("masTmovil");
+		var velocidad=document.getElementById("velocidadnecesita");
 		fibra.style.display="block";
 		minutos.style.display="none";
 		gigas.style.display="none";
+		velocidad.style.display="block";
+		movil.style.display="none";
+		movilYfibra.style.display="none";
+		fijo.style.display="none";
+	}
+	function muestraMovilYfibra(){
+
+		var movilYfibra =document.getElementById("masTmovilYfibra");
+		var fibra =document.getElementById("masTfibra");
+		var minutos=document.getElementById("minutosnecesita");
+		var gigas = document.getElementById("gigasnecesita");
+		var fijo =document.getElementById("masTfijo");
+		var movil =document.getElementById("masTmovil");
+		var velocidad=document.getElementById("velocidadnecesita");
+		fibra.style.display="none";
+		minutos.style.display="block";
+		gigas.style.display="block";
+		velocidad.style.display="block";
+		movil.style.display="none";
+		fijo.style.display="none";
+		movilYfibra.style.display="block";
+		
+	}
+	function muestraFijo(){
+		var movilYfibra =document.getElementById("masTmovilYfibra");
+		var fibra =document.getElementById("masTfibra");
+		var minutos=document.getElementById("minutosnecesita");
+		var gigas = document.getElementById("gigasnecesita");
+		var fijo =document.getElementById("masTfijo");
+		var movil =document.getElementById("masTmovil");
+		var velocidad=document.getElementById("velocidadnecesita");
+		fibra.style.display="none";
+		minutos.style.display="none";
+		gigas.style.display="none";
+		velocidad.style.display="none";
+		movil.style.display="none";
+		fijo.style.display="block";
+		movilYfibra.style.display="none";
 	}
 	</script>
  </div>

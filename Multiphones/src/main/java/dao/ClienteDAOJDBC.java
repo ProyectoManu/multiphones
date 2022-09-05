@@ -175,10 +175,10 @@ public class ClienteDAOJDBC implements ClienteDAO {
 		try {
 			consultaPreparada = con.prepareStatement("INSERT INTO clientes (nombre, apellidos, dni, domicilio,\r\n"
 					+ "						localidad, provincia, cod_postal, fecha_nacimiento, telefono_contacto,\r\n"
-					+ "						email, fecha_contratacion, permanencia, telefono_tarifa,\r\n"
+					+ "						email, telefono_tarifa,\r\n"
 					+ "						id_tarifa_movil, id_tarifa_fibra, id_tarifa_movilYfibra, id_tarifa_fijo)"
 					+ "VALUES "
-					+ "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+					+ "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			
 			consultaPreparada.setString(1, c.getNombre());
 			consultaPreparada.setString(2, c.getApellidos());
@@ -190,13 +190,11 @@ public class ClienteDAOJDBC implements ClienteDAO {
 			consultaPreparada.setString(8, c.getFecha_nacimiento());
 			consultaPreparada.setString(9, c.getTelefono_contacto());
 			consultaPreparada.setString(10, c.getEmail());
-			consultaPreparada.setString(11, c.getFecha_contratacion());
-			consultaPreparada.setString(12, c.getPermanencia());
-			consultaPreparada.setString(13, c.getTelefono_tarifa());
-			consultaPreparada.setInt(14, c.getId_tarifa_movil());
-			consultaPreparada.setInt(15, c.getId_tarifa_fibra());
-			consultaPreparada.setInt(16, c.getId_tarifa_movilYfibra());
-			consultaPreparada.setInt(17, c.getId_tarifa_fijo());
+			consultaPreparada.setString(11, c.getTelefono_tarifa());
+			consultaPreparada.setInt(12, c.getId_tarifa_movil());
+			consultaPreparada.setInt(13, c.getId_tarifa_fibra());
+			consultaPreparada.setInt(14, c.getId_tarifa_movilYfibra());
+			consultaPreparada.setInt(15, c.getId_tarifa_fijo());
 			
 			
 			
@@ -205,7 +203,7 @@ public class ClienteDAOJDBC implements ClienteDAO {
 			System.out.println(c);
 
 		} catch (SQLException e) {
-			System.out.println("Error al realizar la inserci�n del cliente: " + c
+			System.out.println("Error al realizar la inserción del cliente: " + c
 		        +e.getMessage());
 		} finally {
 			try {
