@@ -117,6 +117,7 @@ precio_pack,
 acumula,
 comparte)
 VALUES
+(' ',' ',1,' ',' ',0,0,0,0,0),
 ('prepago','DIGI ILIMITADO 10GB',1,'10','ilimitados',7,5,5,1,0),
 ('prepago','DIGI ILIMITADO 20GB',1,'20','ilimitados',10,6,6,1,0),
 ('prepago','DIGI ILIMITADO 50GB',1,'50','ilimitados',15,9,9,1,0),
@@ -138,6 +139,7 @@ precio_promocion,
 precio_pack, 
 fijo)
 VALUES
+(' ',' ',1,0,0,0,0,0),
 ('contrato','DIGI FIBRA 300MB',1,300,25,25,25,0),
 ('contrato','DIGI FIBRA 1GB',1,1,30,30,30,0),
 ('contrato','DIGI FIBRA SMART 1GB',1,1,20,20,20,0),
@@ -153,6 +155,7 @@ precio,
 precio_promocion,
 precio_pack)
 VALUES
+(' ',' ',1,'0','0',0,0,0),
 ('contrato','DIGI FIJO',1,'0','0',0,0,1),
 ('contrato','DIGI FIJO ILIMITADAS',1,'ilimitados','500',0,0,3);
 
@@ -204,6 +207,7 @@ acumula,
 comparte,
 fijo)
 VALUES
+(' ',' ',1,' ',' ',0,0,0,0,0,0,0),
 ('contrato','SIMYO FIBRA 100 + 20GB',3,'20','ilimitados',100,28.99,28.99,0,1,0,0),
 ('contrato','SIMYO FIBRA 100 + 40GB',3,'40','ilimitados',100,32.99,32.99,0,1,0,0),
 ('contrato','SIMYO FIBRA 100 + 100GB',3,'100','ilimitados',100,38.99,38.99,0,1,0,0),

@@ -12,21 +12,36 @@
  
           
  
-<%String tarifa=null;
+<%String tarifam=null;
+ String tarifaf=null;
+ String tarifav=null;
+ String tarifaj=null;
  
- if ( request.getParameter("tarifas_movil")!=null){
- 		tarifa=request.getParameter("tarifas_movil");
- }else if (request.getParameter("tarifas_fibra")!=null){
- 		tarifa=request.getParameter("tarifas_fibra");
- }else if (request.getParameter("tarifas_movilYfibra")!=null){
- 		tarifa=request.getParameter("tarifas_movilYfibra");	
- } else{
- 	tarifa = request.getParameter("tarifas_fijo");
+ 
+ if ( request.getParameter("tarifas_movil").equals("1")){
+ 		tarifam="-";
+ }else{
+	 tarifam=request.getParameter("tarifas_movil");
+ }
+ if (request.getParameter("tarifas_fibra").equals("1")){
+ 		tarifaf="-";
+ }else{
+	 tarifaf=request.getParameter("tarifas_fibra");
+ }
+ if (request.getParameter("tarifas_movilYfibra").equals("1")){
+ 		tarifav="-";	
+ }else{
+	 tarifav=request.getParameter("tarifas_movilYfibra");
+ }
+ if (request.getParameter("tarifas_fijo").equals("1")){
+		tarifaj="-";	
+ }else{
+	 tarifaj=request.getParameter("tarifas_fijo");
  }
  %>
  
   <div>
-  	<label for="tarifaelegida">TARIFA ELEGIDA:<%=tarifa %> </label>
+  	<label for="tarifaelegida">TARIFA ELEGIDA:<%=tarifam %><%=tarifaf %><%=tarifav %><%=tarifaj %></label>
   </div>
  
     
@@ -79,6 +94,10 @@
     </div>
     <div>  
     <input type="submit" value="Aceptar">
+     <a href="http://localhost:8080/Multiphones/formularioTarifas.jsp">
+     	<input type="button" value="Atrás"> 
+     </a>
+     
     
     </div>
     

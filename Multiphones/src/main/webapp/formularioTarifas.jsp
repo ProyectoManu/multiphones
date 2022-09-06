@@ -109,7 +109,7 @@ List<Tarifa_fijo> listaTarifa_fijo = tarifaFijoDAO.getTarifa_fijo();
 				for (Tarifa_movil tm: listaTarifa_movil){
 			%>
 				<p>TARIFAS:</p>
-				<option value="<%=tm.getId_tarifa_movil()%>"><%=tm.getId_tarifa_movil() %> <p><%=tm.getNombre_tarifa()%></p>
+				<option value="<%=tm.getId_tarifa_movil() %>"><%=tm.getId_tarifa_movil() %> <p><%=tm.getNombre_tarifa()%></p>
 					<p>GIGAS: <%=tm.getGigas()%></p>
 					<p>MINUTOS: <%=tm.getMinutos()%></p>
 					<p>PRECIO: <%=tm.getPrecio()%></p>
@@ -125,12 +125,12 @@ List<Tarifa_fijo> listaTarifa_fijo = tarifaFijoDAO.getTarifa_fijo();
 	<div id="masTfibra" style="display : none;" >
 		
 		
-		<select name="tarifas_fibra" id="tarifas_ibra">
+		<select name="tarifas_fibra" id="tarifas_fibra">
 			<%
 				for (Tarifa_fibra tf: listaTarifa_fibra){
 			%>
 				<p>TARIFAS:</p>
-				<option value="<%=tf.getId_tarifa_fibra()%>"> <%=tf.getNombre_tarifa()%>
+				<option value="<%=tf.getId_tarifa_fibra()%>"><%=tf.getId_tarifa_fibra()%> <%=tf.getNombre_tarifa()%>
 					 <p>VELOCIDAD FIBRA: <%=tf.getVelocidad_fibra()%></p>
 					<p>PRECIO: <%=tf.getPrecio()%></p>
 					<p>PRECIO PROMOCIÓN: <%=tf.getPrecio_promocion()%></p>
@@ -149,7 +149,7 @@ List<Tarifa_fijo> listaTarifa_fijo = tarifaFijoDAO.getTarifa_fijo();
 				for (Tarifa_movilYfibra tmf: listaTarifa_movilYfibra){
 			%>
 				<p>TARIFAS:</p>
-				<option value="<%=tmf.getId_tarifa_movilYfibra()%>"> <%=tmf.getNombre_tarifa()%>
+				<option value="<%=tmf.getId_tarifa_movilYfibra()%>"><%=tmf.getId_tarifa_movilYfibra()%> <%=tmf.getNombre_tarifa()%>
 					 <p>GIGAS: <%=tmf.getGigas()%></p>
 					<p>MINUTOS: <%=tmf.getMinutos()%></p>
 					<p>VELOCIDAD FIBRA: <%=tmf.getVelocidad_fibra()%></p>
@@ -170,7 +170,7 @@ List<Tarifa_fijo> listaTarifa_fijo = tarifaFijoDAO.getTarifa_fijo();
 				for (Tarifa_fijo tfi: listaTarifa_fijo){
 			%>
 				<p>TARIFAS:</p>
-				<option value="<%=tfi.getId_tarifa_fijo()%>"> <%=tfi.getNombre_tarifa()%>
+				<option value="<%=tfi.getId_tarifa_fijo()%>"><%=tfi.getId_tarifa_fijo()%> <%=tfi.getNombre_tarifa()%>
 					 <p>MIN NACIONALES: <%=tfi.getMinutos_nacionales()%></p>
 					<p>MIN INTERNACIONALES: <%=tfi.getMinutos_internacionales()%></p>
 					<p>PRECIO: <%=tfi.getPrecio()%></p>
