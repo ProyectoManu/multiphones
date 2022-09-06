@@ -11,7 +11,7 @@ red_fija varchar(30) not null
 );
 create table tarifas_movil (
 id_tarifa_movil smallint unsigned auto_increment primary key,
-tipo_tarifa enum('contrato','prepago'),
+tipo_tarifa enum('contrato','prepago',' '),
 nombre_tarifa varchar(60) not null unique,
 id_operador smallint unsigned,
 gigas char(15) not null,
@@ -26,7 +26,7 @@ foreign key (id_operador) references operadores(id_operador)
 );
 create table tarifas_fibra (
 id_tarifa_fibra smallint unsigned auto_increment primary key,
-tipo_tarifa enum('contrato'),
+tipo_tarifa enum('contrato',' '),
 nombre_tarifa varchar(60) not null unique,
 id_operador smallint unsigned,
 velocidad_fibra smallint unsigned not null,
@@ -39,7 +39,7 @@ foreign key (id_operador) references operadores(id_operador)
 );
 create table tarifas_movilYfibra (
 id_tarifa_movilYfibra smallint unsigned auto_increment primary key,
-tipo_tarifa enum('contrato'),
+tipo_tarifa enum('contrato',' '),
 nombre_tarifa varchar(60) not null unique,
 id_operador smallint unsigned,
 gigas char(15) not null,
@@ -56,7 +56,7 @@ foreign key (id_operador) references operadores(id_operador)
 );
 create table tarifas_fijo (
 id_tarifa_fijo smallint unsigned auto_increment primary key,
-tipo_tarifa enum('contrato'),
+tipo_tarifa enum('contrato',' '),
 nombre_tarifa varchar(60) not null unique,
 id_operador smallint unsigned,
 minutos_nacionales char(15) not null,
